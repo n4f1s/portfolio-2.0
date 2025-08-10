@@ -1,0 +1,26 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "cSpell.words": [
+        "roboto"
+    ],
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[tailwindcss]": {
+        "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    },
+}
