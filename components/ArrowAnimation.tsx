@@ -13,9 +13,10 @@ const ArrowAnimation = () => {
     const arrow2Ref = useRef<SVGPathElement>(null);
 
     useEffect(() => {
-        if (window.innerWidth >= 768) {
-            setIsClientWide(true);
-        }
+        const checkWidth = () => setIsClientWide(window.innerWidth >= 768);
+        checkWidth();
+        window.addEventListener('resize', checkWidth);
+        return () => window.removeEventListener('resize', checkWidth);
     }, []);
 
     useGSAP(() => {

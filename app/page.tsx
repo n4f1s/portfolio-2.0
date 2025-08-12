@@ -4,6 +4,9 @@ import Experiences from './sections/Experiences';
 import Skills from './sections/Skills';
 import ProjectList from './sections/ProjectList';
 import { Fragment } from 'react';
+import LeetCodeStats from './sections/LeetCodeStats';
+
+
 
 export default function Home() {
     return (
@@ -12,6 +15,7 @@ export default function Home() {
             <AboutMe />
             <Skills />
             <Experiences />
+            <LeetCodeStats />
             <ProjectList />
         </Fragment>
     );

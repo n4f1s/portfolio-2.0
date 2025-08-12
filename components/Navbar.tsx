@@ -26,6 +26,10 @@ const MENU_LINKS = [
         url: '/#my-experience',
     },
     {
+        name: 'LeetCode Stats',
+        url: '/#leet-code-stats',
+    },
+    {
         name: 'Projects',
         url: '/#selected-projects',
     },

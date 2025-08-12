@@ -31,6 +31,21 @@ const robotoFlex = Roboto_Flex({
 export const metadata: Metadata = {
     title: 'Portfolio - Musfiqur Rahman',
     description: 'Personal portfolio of Musfiqur Rahman',
+    openGraph: {
+        title: 'Portfolio - Musfiqur Rahman',
+        description: 'Personal portfolio of Musfiqur Rahman',
+        url: 'https://musfiqur-rahman.vercel.app/',
+        siteName: 'Musfiqur',
+        images: [
+            {
+                url: 'https://ibb.co/fdDCVSf4',
+                width: 1200,
+                height: 630,
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
 };
 
 export default function RootLayout({

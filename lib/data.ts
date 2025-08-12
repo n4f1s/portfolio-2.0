@@ -16,6 +16,7 @@ export const SOCIAL_LINKS = [
         name: 'linkedin',
         url: 'https://www.linkedin.com/in/musfiqur-rahman-8b8193265/',
     },
+    { name: 'leetcode', url: 'https://leetcode.com/u/n4f1s/' },
     { name: 'facebook', url: 'https://www.facebook.com/Musfiq.Nafis/' },
     { name: 'Old Version', url: GENERAL_INFO.oldPortfolio },
 ];
@@ -82,7 +83,7 @@ export const MY_STACK = {
         },
         {
             name: 'Firebase',
-            icon: '/logo/firebase.png',
+            icon: '/logo/firebase.webp',
         },
     ],
     database: [
