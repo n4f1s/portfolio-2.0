@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Portfolio - Musfiqur Rahman',
         description: 'Personal portfolio of Musfiqur Rahman',
-        url: 'https://musfiqur-rahman.vercel.app/',
+        url: 'https://musfiqur.com/preview.png',
         siteName: 'Musfiqur',
         images: [
             {
-                url: 'https://ibb.co/fdDCVSf4',
+                url: '/preview.png',
                 width: 1200,
                 height: 630,
             },

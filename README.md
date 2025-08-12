@@ -1,6 +1,6 @@
 # 🚀 My Portfolio Website
 
-![image](https://ibb.co/fdDCVSf4)
+![image](/preview.png)
 
 ## 🚨 Forking this repo (please read!)
 
