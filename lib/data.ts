@@ -6,7 +6,7 @@ export const GENERAL_INFO = {
     emailSubject: "Let's collaborate on a project",
     emailBody: 'Hi Musfiqur, I am reaching out to you because...',
 
-    oldPortfolio: 'https://www.legacy.me.toinfinite.dev',
+    oldPortfolio: 'https://v-1.musfiqur.com/',
     upworkProfile: 'https://www.upwork.com/freelancers/~013ccdf5df71821d25',
 };
 
@@ -20,6 +20,18 @@ export const SOCIAL_LINKS = [
     { name: 'facebook', url: 'https://www.facebook.com/Musfiq.Nafis/' },
     { name: 'Old Version', url: GENERAL_INFO.oldPortfolio },
 ];
+
+export const hackerRankData = {
+    username: 'musfiqurok',
+    stats: {
+        rank: 396389,
+        problemsSolved: 290,
+        totalProblems: 3647,
+        easy: { solved: 186, total: 890 },
+        medium: { solved: 95, total: 1897 },
+        hard: { solved: 9, total: 860 },
+    },
+};
 
 export const MY_STACK = {
     frontend: [

@@ -1,5 +1,6 @@
 'use client'
 
+import HackerRankCard from '@/components/HackeRankCard';
 import SectionTitle from '@/components/SectionTitle';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -71,6 +72,9 @@ const LeetCodeStats = () => {
                         />
                     </a>
                 </div>
+
+                {/* <HackerRankCard /> */}
+
             </div>
         </section>
     )

@@ -1,6 +1,6 @@
 # 🚀 My Portfolio Website
 
-![image](/preview.png)
+![image](https://musfiqur.com/preview.png)
 
 ## 🚨 Forking this repo (please read!)
 
