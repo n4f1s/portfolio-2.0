@@ -5,12 +5,9 @@ import { ReactLenis } from 'lenis/react';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import Footer from '@/components/Footer';
-import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
-import ParticleBackground from '@/components/ParticleBackground';
 import Navbar from '@/components/Navbar';
-import Preloader from '../components/Preloader';
-import StickyEmail from './sections/StickyEmail';
-import Cursor from '@/components/Cursor';
+import ClientComponents from './sections/ClientComponents';
+import Preloader from '@/components/Preloader';
 
 
 
@@ -31,10 +28,12 @@ const robotoFlex = Roboto_Flex({
 export const metadata: Metadata = {
     title: 'Portfolio - Musfiqur Rahman',
     description: 'Personal portfolio of Musfiqur Rahman',
+    metadataBase: new URL('https://musfiqur.com'),
+
     openGraph: {
         title: 'Portfolio - Musfiqur Rahman',
         description: 'Personal portfolio of Musfiqur Rahman',
-        url: 'https://musfiqur.com/preview.png',
+        url: 'https://musfiqur.com',
         siteName: 'Musfiqur',
         images: [
             {
@@ -45,6 +44,12 @@ export const metadata: Metadata = {
         ],
         locale: 'en_US',
         type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Portfolio - Musfiqur Rahman',
+        description: 'Personal portfolio of Musfiqur Rahman',
+        images: ['/preview.png'],
     },
 };
 
@@ -69,11 +74,8 @@ export default function RootLayout({
                     <main>{children}</main>
                     <Footer />
 
-                    <Cursor />
                     <Preloader />
-                    <ScrollProgressIndicator />
-                    <ParticleBackground />
-                    <StickyEmail />
+                    <ClientComponents />
                 </ReactLenis>
             </body>
         </html>

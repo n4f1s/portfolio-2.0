@@ -57,7 +57,7 @@ const Banner = () => {
                         as="link"
                         target='_blank'
                         href="/Musfiqur_Rahman_Resume.pdf"
-                        download="Musfiqur_Rahman_Nafis.pdf"
+                        download="Musfiqur_Resume.pdf"
                         variant="primary"
                         className="mt-9 banner-button slide-up-and-fade cursor-target"
                     >
