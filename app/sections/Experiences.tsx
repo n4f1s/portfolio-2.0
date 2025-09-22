@@ -16,15 +16,15 @@ const Experiences = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 60%',
-                    end: 'bottom 50%',
+                    start: 'top 90%',
+                    end: 'top 10%',
                     toggleActions: 'restart none none reverse',
                     scrub: 1,
                 },
             });
 
             tl.from('.experience-item', {
-                y: 50,
+                y: 150,
                 opacity: 0,
                 stagger: 0.3,
             });
@@ -37,8 +37,8 @@ const Experiences = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'bottom 50%',
-                    end: 'bottom 20%',
+                    start: 'top 10%',
+                    end: 'bottom 0%',
                     scrub: 1,
                 },
             });

@@ -19,15 +19,15 @@ const LeetCodeStats = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 60%',
-                    end: 'bottom 50%',
+                    start: 'top 90%',
+                    end: 'top 10%',
                     toggleActions: 'restart none none reverse',
                     scrub: 1,
                 },
             });
 
             tl.from('.leetcode-stats', {
-                y: 50,
+                y: 150,
                 opacity: 0,
                 stagger: 0.3,
             });
@@ -40,8 +40,8 @@ const LeetCodeStats = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'bottom 50%',
-                    end: 'bottom 20%',
+                    start: 'top 50%',
+                    end: 'bottom 0%',
                     scrub: 1,
                 },
             });
@@ -54,7 +54,7 @@ const LeetCodeStats = () => {
         { scope: containerRef },
     );
     return (
-        <section className="py-section" id="leet-code-stats">
+        <section className="pb-[250px]" id="leet-code-stats">
             <div className="container" ref={containerRef}>
                 <SectionTitle title="LeetCode Stats" />
 

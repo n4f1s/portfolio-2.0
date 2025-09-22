@@ -39,13 +39,13 @@ export default function RainStreaks() {
     useGSAP(() => animateDrops(), [dropCount]);
 
     useEffect(() => {
-        setDropCount(window.innerWidth < 768 ? 40 : 100);
+        setDropCount(window.innerWidth < 768 ? 10 : 40);
 
         let timeout: NodeJS.Timeout;
         const handleResize = () => {
             clearTimeout(timeout);
             timeout = setTimeout(() => {
-                setDropCount(window.innerWidth < 768 ? 40 : 100);
+                setDropCount(window.innerWidth < 768 ? 10 : 40);
                 gsap.killTweensOf(dropsRef.current);
                 animateDrops();
             }, 200);
