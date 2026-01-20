@@ -35,95 +35,42 @@ export const hackerRankData = {
 
 export const MY_STACK = {
     frontend: [
-        {
-            name: 'JavaScript',
-            icon: '/logo/js.png',
-        },
-        {
-            name: 'TypeScript',
-            icon: '/logo/ts.png',
-        },
-        {
-            name: 'React',
-            icon: '/logo/react.png',
-        },
-        {
-            name: 'Next.js',
-            icon: '/logo/next.png',
-        },
-        {
-            name: 'Redux',
-            icon: '/logo/redux.png',
-        },
-        {
-            name: 'Tailwind CSS',
-            icon: '/logo/tailwind.png',
-        },
-        {
-            name: 'GSAP',
-            icon: '/logo/gsap.png',
-        },
-        {
-            name: 'Framer Motion',
-            icon: '/logo/framer-motion.png',
-        },
-        {
-            name: 'Three.js',
-            icon: '/logo/three.webp',
-        },
-        {
-            name: 'WordPress',
-            icon: '/logo/wordpress.png',
-        },
-        {
-            name: 'React Native',
-            icon: '/logo/reactnative.png',
-        },
+        { name: 'JavaScript', icon: '/logo/js.png' },
+        { name: 'TypeScript', icon: '/logo/ts.png' },
+        { name: 'React', icon: '/logo/react.png' },
+        { name: 'Next.js', icon: '/logo/next.png' },
+        { name: 'Redux Toolkit', icon: '/logo/redux.png' },
+        { name: 'Tailwind CSS', icon: '/logo/tailwind.png' },
+        { name: 'Framer Motion', icon: '/logo/framer-motion.png' },
+        { name: 'Three.js', icon: '/logo/three.webp' },
+        { name: 'GSAP', icon: '/logo/gsap.png' },
+        { name: 'WordPress', icon: '/logo/wordpress.png' },
+        { name: 'React Native', icon: '/logo/reactnative.png' },
     ],
     backend: [
-        {
-            name: 'Node.js',
-            icon: '/logo/node.png',
-        },
-        {
-            name: 'NestJS',
-            icon: '/logo/nest.svg',
-        },
-        {
-            name: 'Express.js',
-            icon: '/logo/express.png',
-        },
-        {
-            name: 'Firebase',
-            icon: '/logo/firebase.webp',
-        },
+        { name: 'Node.js', icon: '/logo/node.png' },
+        { name: 'Fastify', icon: '/logo/fastify.webp' },
+        { name: 'REST APIs', icon: '/logo/restapi.png' },
+        { name: 'Express.js', icon: '/logo/express.png' },
     ],
     database: [
-        {
-            name: 'MongoDB',
-            icon: '/logo/mongodb.svg',
-        },
+        { name: 'PostgreSQL', icon: '/logo/postgresql.webp' },
+        { name: 'MongoDB', icon: '/logo/mongodb.svg' },
+        { name: 'Prisma', icon: '/logo/prisma.png' },
+        { name: 'Redis', icon: '/logo/redis.png' },
+        { name: 'Supabase', icon: '/logo/supabase.webp' },
+        { name: 'Neon', icon: '/logo/neon.png' },
     ],
     tools: [
-        {
-            name: 'Git',
-            icon: '/logo/git.png',
-        },
-        {
-            name: 'AWS',
-            icon: '/logo/aws.png',
-        },
-        {
-            name: 'Vercel',
-            icon: '/logo/vercel.webp',
-        },
-        {
-            name: 'Figma',
-            icon: '/logo/figma.png',
-        },
+        { name: 'GitHub', icon: '/logo/github.png' },
+        { name: 'Docker', icon: '/logo/docker.webp' },
+        { name: 'AWS', icon: '/logo/aws.png' },
+        { name: 'S3', icon: '/logo/aws.png' },
+        { name: 'Vercel', icon: '/logo/vercel.webp' },
+        { name: 'Postman', icon: '/logo/postman.webp' },
+        { name: 'Figma', icon: '/logo/figma.png' },
     ],
 };
-
 export const PROJECTS: IProject[] = [
     {
         title: 'WeGro Global',
@@ -293,6 +240,11 @@ export const MY_EXPERIENCE = [
     {
         title: 'Web Developer',
         company: 'Wegro.Global',
-        duration: 'Feb 2024 - crrent',
+        duration: 'Feb 2024 - Mar 2025',
+    },
+    {
+        title: 'Software Engineer (Full-Stack)',
+        company: 'Brandclamp Inc.',
+        duration: 'Aug 2025 - Present',
     },
 ];
