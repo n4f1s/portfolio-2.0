@@ -138,6 +138,70 @@ export const PROJECTS: IProject[] = [
     `,
     },
     {
+        title: 'Indian Grill Wrap & Go',
+        slug: 'indiangrillwrap',
+        techStack: ['Next.js', 'Tailwind CSS', 'Gemini AI'],
+        thumbnail: '/projects/images/indiangrill-1.webp',
+        longThumbnail: '/projects/images/indiangrill-1.webp',
+        images: [
+            '/projects/images/indiangrill-1.webp',
+            '/projects/images/indiangrill-2.webp',
+            '/projects/images/indiangrill-3.webp',
+        ],
+        liveUrl: 'https://indiangrillwrap.com',
+        year: 2025,
+        description: `
+    Indian Grill Wrap & Go is a restaurant website designed to feel like a full menu browsing experience—fast, clean, and easy to navigate. The client needed a structured menu system (not a simple landing page), so I built a category-based menu with <strong>26 submenu pages</strong> and <strong>100+ dishes</strong>, optimized for quick discovery and mobile usability.<br/><br/>
+
+    To power the menu at scale, I scraped the restaurant’s Uber Eats listing and transformed it into a clean JSON dataset, then matched dish images by filename and served them from the public assets pipeline for performance and simplicity.<br/><br/>
+
+    The site also includes an AI chat assistant powered by <strong>Gemini</strong>, designed to help customers find items and get answers quickly—without adding database costs.
+  `,
+        role: `
+    <strong>Designer & Full Stack Web Developer</strong><br/><br/>
+    Delivered the site end-to-end with a focus on performance, scalability, and low ongoing cost:<br/>
+    <ul>
+      <li>🍽️ Built a menu system with <strong>26 categories</strong> and <strong>100+ dishes</strong>, structured like a delivery app browsing experience.</li>
+      <li>🧾 Scraped Uber Eats menu data and converted it into a maintainable <strong>JSON-driven</strong> content system.</li>
+      <li>🖼️ Matched and organized dish images by filename and integrated them from the <strong>public</strong> folder for fast loading.</li>
+      <li>🤖 Integrated a <strong>Gemini AI</strong> chat assistant to guide customers and answer menu questions.</li>
+      <li>💾 Implemented <strong>client-side chat history</strong> (last 10 messages) to keep context without database/storage fees.</li>
+      <li>📉 Reduced AI token usage and cost by designing prompts that fetch menu data <strong>only when needed</strong> instead of injecting large datasets.</li>
+    </ul>
+  `,
+    },
+    {
+        title: 'Evonix Ventures',
+        slug: 'evonixventures',
+        techStack: ['Next.js', 'Tailwind CSS', 'Three.js', 'GSAP'],
+        thumbnail: '/projects/thumbnail/evonix.webp',
+        longThumbnail: '/projects/thumbnail/evonix.webp',
+        images: [
+            '/projects/images/evonix-1.webp',
+            '/projects/images/evonix-2.webp',
+            '/projects/images/evonix-3.webp',
+        ],
+        liveUrl: 'https://evonixventures.com/',
+        year: 2025,
+        description: `
+    Evonix Ventures is an independent mobile game studio focused on “classics reimagined”—bringing well-loved card and casual games to a modern audience. Their studio portfolio includes <strong>15+ titles</strong> and games that have reached <strong>millions of downloads</strong> across multiple releases.<br/><br/>
+
+    The goal of this website was to create a bold, high-end studio presence that matches the scale of their audience and showcases featured games, new releases, and studio culture in a way that feels premium and memorable.
+  `,
+        role: `
+    <strong>Frontend Developer (Next.js) & Interactive UI Engineer</strong><br/><br/>
+    I designed and built the website to feel like a modern game studio brand—fast, immersive, and visually striking:<br/>
+    <ul>
+      <li>🎮 Built a game-studio showcase site in <strong>Next.js</strong> with clean structure for featured games, releases, and studio sections.</li>
+      <li>🧊 Integrated <strong>Three.js</strong> to deliver a cinematic 3D experience (hero visuals / interactive elements) that makes the brand instantly feel “game-native”.</li>
+      <li>✨ Used <strong>GSAP</strong> for smooth, controlled animations and scroll-driven motion—keeping transitions sharp without hurting performance.</li>
+      <li>📱 Ensured fully responsive layout across devices so game discovery and CTAs stay clear on mobile.</li>
+      <li>⚡ Optimized for real-world performance (asset loading, animation discipline, and UI rendering) so the site remains fast even with 3D effects.</li>
+      <li>🧭 Focused on a “studio credibility” layout—clear messaging, social proof, and polished presentation aligned with a company that ships at scale.</li>
+    </ul>
+  `,
+    },
+    {
         title: 'Apple',
         slug: 'apple',
         techStack: [
@@ -207,33 +271,33 @@ export const PROJECTS: IProject[] = [
         </ul>
     `,
     },
-    {
-        title: 'Virtual Bank',
-        slug: 'virtual-bank',
-        techStack: ['React.s', 'Material ui', 'Javascript'],
-        thumbnail: '/projects/thumbnail/bank.webp',
-        longThumbnail: '/projects/thumbnail/bank.webp',
-        images: [
-            '/projects/thumbnail/bank.webp',
-            '/projects/images/bank-1.png',
-            '/projects/images/bank-2.png',
-        ],
-        sourceCode: 'https://github.com/Musfiqur/crenotive',
-        liveUrl: 'https://demo-virtual-bank.netlify.app/',
-        year: 2023,
-        description: `
-        “Virtual Bank” is a demo banking interface designed to represent modern digital finance tools with clear UI and usability. It demonstrates interactive components such as modals, responsive grids, and navigation—showcasing utility tailored for fintech simulations.
-    `,
-        role: `
-        <strong>Frontend Developer</strong><br/><br/>
-        I built it using:
-        <ul>
-        <li>💠 React and Material UI for sleek, modular interface.</li>
-        <li>📑 Integrated responsive layouts and component states.</li>
-        <li>🔗 Hosted and documented via GitHub for easy access.</li>
-        </ul>
-    `,
-    },
+    // {
+    //     title: 'Virtual Bank',
+    //     slug: 'virtual-bank',
+    //     techStack: ['React.s', 'Material ui', 'Javascript'],
+    //     thumbnail: '/projects/thumbnail/bank.webp',
+    //     longThumbnail: '/projects/thumbnail/bank.webp',
+    //     images: [
+    //         '/projects/thumbnail/bank.webp',
+    //         '/projects/images/bank-1.png',
+    //         '/projects/images/bank-2.png',
+    //     ],
+    //     sourceCode: 'https://github.com/Musfiqur/crenotive',
+    //     liveUrl: 'https://demo-virtual-bank.netlify.app/',
+    //     year: 2023,
+    //     description: `
+    //     “Virtual Bank” is a demo banking interface designed to represent modern digital finance tools with clear UI and usability. It demonstrates interactive components such as modals, responsive grids, and navigation—showcasing utility tailored for fintech simulations.
+    // `,
+    //     role: `
+    //     <strong>Frontend Developer</strong><br/><br/>
+    //     I built it using:
+    //     <ul>
+    //     <li>💠 React and Material UI for sleek, modular interface.</li>
+    //     <li>📑 Integrated responsive layouts and component states.</li>
+    //     <li>🔗 Hosted and documented via GitHub for easy access.</li>
+    //     </ul>
+    // `,
+    // },
 ];
 
 export const MY_EXPERIENCE = [
