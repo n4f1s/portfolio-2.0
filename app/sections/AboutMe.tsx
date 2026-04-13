@@ -55,13 +55,13 @@ const AboutMe = () => {
         <section className="pb-section" id="about-me">
             <div className="container" ref={container}>
                 <h2 className="text-4xl md:text-6xl font-thin mb-20 slide-up-and-fade">
-                    I believe in a user centered design approach, ensuring that
-                    every project I work on is tailored to meet the specific
-                    needs of its users.
+                    I build production-ready web applications with a focus on
+                    architecture, maintainability, performance, and clear
+                    product execution.
                 </h2>
 
                 <p className="pb-3 border-b text-muted-foreground slide-up-and-fade">
-                    This is me.
+                    About
                 </p>
 
                 <div className="grid md:grid-cols-12 mt-9">
@@ -73,18 +73,21 @@ const AboutMe = () => {
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                I&apos;m a web developer dedicated to
-                                turning ideas into creative solutions. I
-                                specialize in creating seamless and intuitive
-                                user experiences.
+                                I&apos;m a full-stack developer focused on
+                                building reliable web applications from
+                                interface to API. My core stack is React,
+                                Next.js, and TypeScript, with backend
+                                experience in Fastify and production deployment
+                                workflows on AWS.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                                My approach focuses on creating scalable,
-                                high-performing solutions tailored to both user
-                                needs and business objectives. By prioritizing
-                                performance, accessibility, and responsiveness,
-                                I strive to deliver experiences that not only
-                                engage users but also drive tangible results.
+                                I care about clear architecture, maintainable
+                                code, and performance in real environments.
+                                Whether I&apos;m shipping frontend features,
+                                designing backend integrations, or handling
+                                deployment details, I aim to build software
+                                that is scalable, readable, and ready for teams
+                                to extend.
                             </p>
                         </div>
                     </div>

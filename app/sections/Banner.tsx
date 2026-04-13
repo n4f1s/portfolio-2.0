@@ -41,15 +41,15 @@ const Banner = () => {
             >
                 <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
                     <h1 className="banner-title slide-up-and-fade leading-[.95] text-6xl sm:text-[80px] font-anton">
-                        <span className="text-primary text-pretty">SOFTWARE</span>
+                        <span className="text-primary text-pretty">FULL-STACK</span>
                         <br /> <span className="ml-[140px]">ENGINEER</span>
                     </h1>
 
                     <p className="banner-description slide-up-and-fade mt-6 text-lg text-muted-foreground">
-                        Hi! I&apos;m{" "}
-                        <span className="font-medium text-foreground">Musfiqur</span>. A Software
-                        Engineer (Full-Stack) with 3+ years of experience building
-                        high-performance, scalable, and responsive web applications.
+                        Full-stack software engineer with 3+ years of
+                        experience building production-ready web applications
+                        with React, Next.js, Fastify, and AWS deployment
+                        workflows.
                     </p>
 
                     <Button
@@ -60,7 +60,7 @@ const Banner = () => {
                         variant="primary"
                         className="mt-9 banner-button slide-up-and-fade cursor-target"
                     >
-                        Resume
+                        View Resume
                     </Button>
                 </div>
 
@@ -78,7 +78,7 @@ const Banner = () => {
                             5+
                         </h5>
                         <p className="text-muted-foreground">
-                            Completed Projects
+                            Deployed Projects
                         </p>
                     </div>
                 </div>

@@ -97,7 +97,7 @@ const ProjectDetails = ({ project }: Props) => {
                     className="cursor-target mb-16 inline-flex gap-2 items-center group h-12"
                 >
                     <ArrowLeft className="group-hover:-translate-x-1 group-hover:text-primary transition-all duration-300" />
-                    Back
+                    Back to Portfolio
                 </TransitionLink>
 
                 <div className="top-0 min-h-[calc(100svh-100px)] flex" id="info">
@@ -133,7 +133,7 @@ const ProjectDetails = ({ project }: Props) => {
 
                         <div className="max-w-[635px] space-y-7 pb-20 mx-auto">
                             <div className="fade-in-later">
-                                <p className="text-muted-foreground font-anton mb-3">Link</p>
+                                <p className="text-muted-foreground font-anton mb-3">Live Site</p>
                                 <div className="text-lg">
                                     <a
                                         href={project.liveUrl}
@@ -150,18 +150,18 @@ const ProjectDetails = ({ project }: Props) => {
                                 <div className="text-lg">{project.year}</div>
                             </div>
                             <div className="fade-in-later">
-                                <p className="text-muted-foreground font-anton mb-3">Tech & Technique</p>
+                                <p className="text-muted-foreground font-anton mb-3">Stack</p>
                                 <div className="text-lg">{project.techStack.join(', ')}</div>
                             </div>
                             <div className="fade-in-later">
-                                <p className="text-muted-foreground font-anton mb-3">Description</p>
+                                <p className="text-muted-foreground font-anton mb-3">Overview</p>
                                 <div className="text-lg prose-xl markdown-text">
                                     {mounted && parse(project.description)}
                                 </div>
                             </div>
                             {project.role && (
                                 <div className="fade-in-later">
-                                    <p className="text-muted-foreground font-anton mb-3">My Role</p>
+                                    <p className="text-muted-foreground font-anton mb-3">Role</p>
                                     <div className="text-lg">
                                         {mounted && parse(project.role)}
                                     </div>

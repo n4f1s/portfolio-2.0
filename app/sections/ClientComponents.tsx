@@ -17,11 +17,11 @@ const StickyEmail = dynamic(() => import("./StickyEmail"), { ssr: false });
 
 const ProjectList = dynamic(() => import('./ProjectList'), {
     ssr: false,
-    loading: () => <p className="text-center p-40">Loading projects...</p>,
+    loading: () => <p className="text-center p-40">Loading selected work...</p>,
 });
 const Skills = dynamic(() => import('./Skills'), {
     ssr: false,
-    loading: () => <p className="text-center p-20">Loading my stack...</p>,
+    loading: () => <p className="text-center p-20">Loading tech stack...</p>,
 });
 
 

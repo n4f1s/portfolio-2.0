@@ -3,11 +3,10 @@ import { IProject } from '@/types';
 export const GENERAL_INFO = {
     email: 'hello@musfiqur.com ',
 
-    emailSubject: "Let's collaborate on a project",
-    emailBody: 'Hi Musfiqur, I am reaching out to you because...',
+    emailSubject: 'Software engineering role',
+    emailBody: "Hi Musfiqur, I'd like to discuss a software engineering role.",
 
     oldPortfolio: 'https://v-1.musfiqur.com/',
-    upworkProfile: 'https://www.upwork.com/freelancers/~013ccdf5df71821d25',
 };
 
 export const SOCIAL_LINKS = [
@@ -18,7 +17,7 @@ export const SOCIAL_LINKS = [
     },
     { name: 'leetcode', url: 'https://leetcode.com/u/n4f1s/' },
     { name: 'facebook', url: 'https://www.facebook.com/Musfiq.Nafis/' },
-    { name: 'Old Version', url: GENERAL_INFO.oldPortfolio },
+    { name: 'Portfolio Archive', url: GENERAL_INFO.oldPortfolio },
 ];
 
 export const hackerRankData = {
@@ -78,23 +77,25 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://www.wegro.global/',
         year: 2024,
         description: `
-        WeGro is a Bangladeshi agri-fintech platform dedicated to democratizing access for smallholder farmers to finance, markets, and high-quality inputs. It supports sustainable agriculture by integrating investment for farming inputs with a fairness-based profit-sharing model.<br/><br/>
+        WeGro is an agri-fintech platform focused on connecting smallholder farmers with financing, markets, and agricultural inputs. I contributed to core product features that supported investment tracking, project visibility, and secure access to operational data.<br/><br/>
+
+        The work required dependable frontend delivery, backend integration, and careful handling of state, permissions, and financial data visibility in a production environment.<br/><br/>
     `,
         role: `
-        <strong>Full Stack Developer & Technical Contributor</strong><br/><br/>
-        Worked alongside WeGro's core team to deliver key technical components of their platform:<br/>
+        <strong>Full-Stack Developer</strong><br/><br/>
+        Contributed across product-facing frontend work and backend integration:<br/>
         <ul>
-        <li>🔧 Built the investor-facing dashboard as a mobile/web interface showing portfolio status, project progress, and ROI</li>
-        <li>🛠 Integrated P2P investment backend logic with frontend controls and state management</li>
-        <li>🧪 Implemented platform features to show project stages, profit timeline, and farmer data securely</li>
-        <li>📱 Ensured mobile app integration compatibility (Android/iOS)</li>
-        <li>📦 Worked with fintech requirements—data privacy, transparency, and auditability</li>
+        <li>Built the investor dashboard to surface portfolio status, project progress, and returns across web and mobile flows.</li>
+        <li>Integrated investment workflows with backend APIs and frontend state management.</li>
+        <li>Delivered secure views for farmer data, project stages, and profit timelines with attention to privacy and auditability.</li>
+        <li>Supported platform compatibility requirements for Android and iOS application flows.</li>
+        <li>Worked within fintech constraints where reliability, transparency, and data integrity mattered in day-to-day product behavior.</li>
         </ul>
     `,
         techStack: [
             'Next.js',
             'Express / Node.js',
-            'RESTful APIs',
+            'REST APIs',
             'Tailwind CSS',
             'Framer Motion',
             'Digital Payment Integration',
@@ -110,7 +111,7 @@ export const PROJECTS: IProject[] = [
     {
         title: 'Funfuse Games',
         slug: 'funfusegames',
-        techStack: ['Wordpress', 'Woocommerce', 'Elementor', 'PHP'],
+        techStack: ['WordPress', 'WooCommerce', 'Elementor', 'PHP'],
         thumbnail: '/projects/thumbnail/funfuse.webp',
         longThumbnail: '/projects/thumbnail/funfuse.webp',
         images: [
@@ -120,20 +121,18 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://funfusegames.com/',
         year: 2024,
         description: `
-        Funfuse Games is a mobile game development studio known for creating engaging casual card and puzzle games. They prioritize high retention, intuitive gameplay, and long-term monetization via Google Play and the App Store.<br/><br/>
-        <strong>What Makes Them Unique:</strong><br/>
-        - Easy-to-pick-up casual games with addictive play loops.<br/>
-        - Focus on strong user retention and monetization.<br/>
-        - Consistent updates and user engagement strategies.
+        Funfuse Games is a mobile game studio publishing casual card and puzzle titles across the App Store and Google Play. I built the web presence used to present the studio, highlight releases, and support discovery for a growing catalog.<br/><br/>
+
+        The focus was on shipping a maintainable website with clear information architecture, strong responsiveness, and solid search performance.
     `,
         role: `
         <strong>Frontend Developer</strong><br/><br/>
-        I took the lead on:
+        Built the public-facing site with a focus on maintainability and performance:
         <ul>
-        <li>🚀 Building the site with WordPress and WooCommerce for game promotion and distribution.</li>
-        <li>🎨 Crafting UIs with Elementor for dynamic game pages.</li>
-        <li>🧩 Ensuring responsive design across devices.</li>
-        <li>🔍 Optimizing site performance and SEO for discovery.</li>
+        <li>Implemented the site in WordPress and WooCommerce for studio content and release management.</li>
+        <li>Structured reusable page layouts in Elementor for game pages and supporting content.</li>
+        <li>Optimized responsiveness, page speed, and SEO to improve discoverability.</li>
+        <li>Set up a content workflow that made future updates easier without requiring code changes for every page.</li>
         </ul>
     `,
     },
@@ -151,22 +150,22 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://indiangrillwrap.com',
         year: 2025,
         description: `
-    Indian Grill Wrap & Go is a restaurant website designed to feel like a full menu browsing experience—fast, clean, and easy to navigate. The client needed a structured menu system (not a simple landing page), so I built a category-based menu with <strong>26 submenu pages</strong> and <strong>100+ dishes</strong>, optimized for quick discovery and mobile usability.<br/><br/>
+    Indian Grill Wrap & Go is a content-heavy restaurant website built to handle a large menu with the speed and structure of a product interface rather than a simple landing page. I turned a 100+ item menu into a category-based browsing experience with <strong>26 submenu pages</strong>, optimized for quick discovery on mobile and desktop.<br/><br/>
 
-    To power the menu at scale, I scraped the restaurant’s Uber Eats listing and transformed it into a clean JSON dataset, then matched dish images by filename and served them from the public assets pipeline for performance and simplicity.<br/><br/>
+    To keep the menu maintainable, I transformed data from the restaurant's Uber Eats listing into a clean JSON dataset and paired it with static assets for fast delivery and straightforward updates.<br/><br/>
 
-    The site also includes an AI chat assistant powered by <strong>Gemini</strong>, designed to help customers find items and get answers quickly—without adding database costs.
+    The site also includes a lightweight assistant powered by <strong>Gemini</strong> to answer menu questions without introducing unnecessary infrastructure or storage costs.
   `,
         role: `
-    <strong>Designer & Full Stack Web Developer</strong><br/><br/>
-    Delivered the site end-to-end with a focus on performance, scalability, and low ongoing cost:<br/>
+    <strong>Full-Stack Developer</strong><br/><br/>
+    Delivered the site end to end with a focus on maintainability, performance, and low operating cost:<br/>
     <ul>
-      <li>🍽️ Built a menu system with <strong>26 categories</strong> and <strong>100+ dishes</strong>, structured like a delivery app browsing experience.</li>
-      <li>🧾 Scraped Uber Eats menu data and converted it into a maintainable <strong>JSON-driven</strong> content system.</li>
-      <li>🖼️ Matched and organized dish images by filename and integrated them from the <strong>public</strong> folder for fast loading.</li>
-      <li>🤖 Integrated a <strong>Gemini AI</strong> chat assistant to guide customers and answer menu questions.</li>
-      <li>💾 Implemented <strong>client-side chat history</strong> (last 10 messages) to keep context without database/storage fees.</li>
-      <li>📉 Reduced AI token usage and cost by designing prompts that fetch menu data <strong>only when needed</strong> instead of injecting large datasets.</li>
+      <li>Built a JSON-driven menu architecture supporting <strong>26 categories</strong> and <strong>100+ dishes</strong>.</li>
+      <li>Created a data ingestion workflow from Uber Eats into maintainable structured content.</li>
+      <li>Integrated image assets through the public pipeline for predictable performance and simple deployment.</li>
+      <li>Added a <strong>Gemini</strong>-powered assistant for menu discovery and quick question handling.</li>
+      <li>Stored recent chat context locally in the browser to avoid backend storage overhead.</li>
+      <li>Reduced token usage by loading menu data only when needed instead of injecting large datasets into every request.</li>
     </ul>
   `,
     },
@@ -184,20 +183,18 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://evonixventures.com/',
         year: 2025,
         description: `
-    Evonix Ventures is an independent mobile game studio focused on “classics reimagined”—bringing well-loved card and casual games to a modern audience. Their studio portfolio includes <strong>15+ titles</strong> and games that have reached <strong>millions of downloads</strong> across multiple releases.<br/><br/>
+    Evonix Ventures is a mobile game studio with a portfolio of <strong>15+ titles</strong> and releases that have reached <strong>millions of downloads</strong>. The site was built to present the company at a level that matched the scale of its products, with a strong focus on brand clarity, release visibility, and performance.<br/><br/>
 
-    The goal of this website was to create a bold, high-end studio presence that matches the scale of their audience and showcases featured games, new releases, and studio culture in a way that feels premium and memorable.
+    This project emphasized polished interaction design, careful animation discipline, and a frontend architecture that could support rich visuals without sacrificing usability or load performance.
   `,
         role: `
-    <strong>Frontend Developer (Next.js) & Interactive UI Engineer</strong><br/><br/>
-    I designed and built the website to feel like a modern game studio brand—fast, immersive, and visually striking:<br/>
+    <strong>Frontend Engineer</strong><br/><br/>
+    Built an interactive studio site with attention to performance, structure, and maintainability:<br/>
     <ul>
-      <li>🎮 Built a game-studio showcase site in <strong>Next.js</strong> with clean structure for featured games, releases, and studio sections.</li>
-      <li>🧊 Integrated <strong>Three.js</strong> to deliver a cinematic 3D experience (hero visuals / interactive elements) that makes the brand instantly feel “game-native”.</li>
-      <li>✨ Used <strong>GSAP</strong> for smooth, controlled animations and scroll-driven motion—keeping transitions sharp without hurting performance.</li>
-      <li>📱 Ensured fully responsive layout across devices so game discovery and CTAs stay clear on mobile.</li>
-      <li>⚡ Optimized for real-world performance (asset loading, animation discipline, and UI rendering) so the site remains fast even with 3D effects.</li>
-      <li>🧭 Focused on a “studio credibility” layout—clear messaging, social proof, and polished presentation aligned with a company that ships at scale.</li>
+      <li>Built the studio website in <strong>Next.js</strong> with clear structure for titles, releases, and company content.</li>
+      <li>Integrated <strong>Three.js</strong> and <strong>GSAP</strong> for interactive visuals while keeping rendering and asset loading controlled.</li>
+      <li>Tuned animation timing, responsiveness, and layout behavior across desktop and mobile devices.</li>
+      <li>Focused on component structure and performance so the experience stayed fast even in motion-heavy sections.</li>
     </ul>
   `,
     },
@@ -206,10 +203,10 @@ export const PROJECTS: IProject[] = [
         slug: 'apple',
         techStack: [
             'Next.js',
-            'Gsap',
+            'GSAP',
             'Three.js',
             'Tailwind CSS',
-            'React-three-fiber',
+            'React Three Fiber',
         ],
         thumbnail: '/projects/thumbnail/apple.webp',
         longThumbnail: '/projects/thumbnail/apple.webp',
@@ -220,19 +217,17 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://apple.musfiqur.com/',
         year: 2023,
         description: `
-        A stylized re-creation of Apple’s iconic landing page, featuring immersive 3D elements and smooth scroll animations. I built it to showcase modern UI/UX design skills, performance optimization, and interactive web experiences.<br/><br/>
-        <strong>Features:</strong><br/>
-        - 3D rendered product showcase using react-three-fiber.<br/>
-        - Animated content entrances powered by GSAP.<br/>
-        - Optimized for both animation and page speed.
+        This project is a frontend engineering study inspired by Apple's product pages. I built it to explore how 3D rendering, animation sequencing, and responsive layouts can work together in a high-polish product experience without sacrificing performance.<br/><br/>
+
+        The implementation focused on reusable UI structure, smooth interaction, and keeping the rendering pipeline disciplined enough for real devices.
     `,
         role: `
         <strong>Solo Developer</strong><br/><br/>
-        I handled everything—from design to deployment:
+        Built the experience end to end with an emphasis on reusable components and rendering discipline:
         <ul>
-        <li>✍ Crafted reusable components with Tailwind CSS.</li>
-        <li>🕹 Integrated 3D visuals using Three.js + React Three Fiber.</li>
-        <li>🎞 Implemented timeline animations with GSAP.</li>
+        <li>Built reusable UI components with <strong>Next.js</strong> and <strong>Tailwind CSS</strong>.</li>
+        <li>Integrated 3D product visuals with <strong>Three.js</strong> and <strong>React Three Fiber</strong>.</li>
+        <li>Implemented timeline and scroll-based motion with <strong>GSAP</strong> while keeping interactions smooth.</li>
         </ul>
     `,
     },
@@ -241,10 +236,10 @@ export const PROJECTS: IProject[] = [
         slug: 'fizzi',
         techStack: [
             'Next.js',
-            'Gsap',
+            'GSAP',
             'Three.js',
             'Tailwind CSS',
-            'React-three-fiber',
+            'React Three Fiber',
         ],
         thumbnail: '/projects/thumbnail/fizzi.webp',
         longThumbnail: '/projects/thumbnail/fizzi.webp',
@@ -255,19 +250,17 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://fizzi.musfiqur.com/',
         year: 2024,
         description: `
-        Fizzi is a creative digital experience built around property visualization, blending UI animations with 3D space pacing. It features animated content layouts and immersive visuals to showcase design flexibility in digital storytelling.<br/><br/>
-        <strong>Notable Features:</strong><br/>
-        - Animated transitions and scroll effects with GSAP.<br/>
-        - 3D content integration with react-three-fiber.<br/>
-        - Clean, responsive UI for modern web.
+        Fizzi is a frontend experiment centered on spatial storytelling and animated UI. I used it as a practical study in motion-heavy interfaces, component structure, and responsive behavior for visually rich landing pages.<br/><br/>
+
+        The focus was not just on visual presentation, but on implementing complex interaction cleanly in code.
     `,
         role: `
         <strong>Frontend Engineer</strong><br/><br/>
-        I designed and built:
+        Built the experience with a focus on clean implementation and responsive behavior:
         <ul>
-        <li>🔄 Interactive visuals using GSAP scroll timelines.</li>
-        <li>🧱 Modular UI components styled with Tailwind CSS.</li>
-        <li>🌍 Responsive layout ensuring visual continuity across devices.</li>
+        <li>Implemented interactive motion using <strong>GSAP</strong> scroll timelines and sequenced transitions.</li>
+        <li>Built modular UI components with <strong>Next.js</strong> and <strong>Tailwind CSS</strong>.</li>
+        <li>Ensured layout and animation continuity across breakpoints and device sizes.</li>
         </ul>
     `,
     },
@@ -302,8 +295,8 @@ export const PROJECTS: IProject[] = [
 
 export const MY_EXPERIENCE = [
     {
-        title: 'Web Developer',
-        company: 'Wegro.Global',
+        title: 'Full-Stack Web Developer',
+        company: 'WeGro Global',
         duration: 'Feb 2024 - Mar 2025',
     },
     {

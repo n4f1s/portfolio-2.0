@@ -6,7 +6,6 @@ const Footer = async () => {
     return (
         <footer className="text-center pb-5" id="contact">
             <div className="container">
-                <p className="text-lg">Have a project in mind?</p>
                 <a
                     href={`mailto:${GENERAL_INFO.email}`}
                     className="cursor-target text-3xl sm:text-4xl font-anton inline-block mt-5 mb-10 hover:underline"
@@ -20,7 +19,7 @@ const Footer = async () => {
                         target="_blank"
                         className="cursor-target leading-none text-muted-foreground hover:underline hover:text-white"
                     >
-                        Design & built by Musfiqur Rahman
+                        Built by Musfiqur Rahman
                     </a>
                 </div>
             </div>

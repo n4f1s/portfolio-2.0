@@ -18,7 +18,7 @@ const MENU_LINKS = [
         url: '/',
     },
     {
-        name: 'About Me',
+        name: 'About',
         url: '/#about-me',
     },
     {
@@ -30,7 +30,7 @@ const MENU_LINKS = [
         url: '/#leet-code-stats',
     },
     {
-        name: 'Projects',
+        name: 'Selected Work',
         url: '/#selected-projects',
     },
 ];
@@ -151,7 +151,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="w-full max-w-[300px] mx-8 sm:mx-auto">
-                    <p className="text-muted-foreground mb-4">GET IN TOUCH</p>
+                    <p className="text-muted-foreground mb-4">SOFTWARE ENGINEERING</p>
                     <a href={`mailto:${GENERAL_INFO.email}`}>
                         {GENERAL_INFO.email}
                     </a>
