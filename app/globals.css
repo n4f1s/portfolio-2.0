@@ -54,6 +54,12 @@
     .markdown-text ul {
         @apply pl-5 mt-2 list-disc;
     }
+
+    .scroll-reveal-bottom {
+        opacity: 0;
+        transform: translate3d(0, 100px, 0);
+        will-change: transform, opacity;
+    }
 }
 
 .rain-container {

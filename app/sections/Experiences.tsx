@@ -13,39 +13,18 @@ const Experiences = () => {
 
     useGSAP(
         () => {
-            const tl = gsap.timeline({
+            gsap.to('.experience-item', {
+                y: 0,
+                opacity: 1,
+                duration: 0.7,
+                ease: 'power2.out',
+                stagger: 0.5,
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 90%',
-                    end: 'top 10%',
-                    toggleActions: 'restart none none reverse',
-                    scrub: 1,
+                    start: 'top 70%',
+                    toggleActions: 'play none none reverse',
+                    invalidateOnRefresh: true,
                 },
-            });
-
-            tl.from('.experience-item', {
-                y: 150,
-                opacity: 0,
-                stagger: 0.3,
-            });
-        },
-        { scope: containerRef },
-    );
-
-    useGSAP(
-        () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'top 10%',
-                    end: 'bottom 0%',
-                    scrub: 1,
-                },
-            });
-
-            tl.to(containerRef.current, {
-                y: -150,
-                opacity: 0,
             });
         },
         { scope: containerRef },
@@ -58,7 +37,10 @@ const Experiences = () => {
 
                 <div className="grid gap-14">
                     {MY_EXPERIENCE.map((item) => (
-                        <div key={item.title} className="experience-item">
+                        <div
+                            key={item.title}
+                            className="experience-item scroll-reveal-bottom"
+                        >
                             <p className="text-xl text-muted-foreground">
                                 {item.company}
                             </p>

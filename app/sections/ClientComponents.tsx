@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Skills from "./Skills";
 
 // Lazy-load heavy components
 const Cursor = dynamic(() => import("../../components/Cursor"), { ssr: false });
@@ -19,12 +20,6 @@ const ProjectList = dynamic(() => import('./ProjectList'), {
     ssr: false,
     loading: () => <p className="text-center p-40">Loading selected work...</p>,
 });
-const Skills = dynamic(() => import('./Skills'), {
-    ssr: false,
-    loading: () => <p className="text-center p-20">Loading tech stack...</p>,
-});
-
-
 export default function ClientComponents() {
     return (
         <>
