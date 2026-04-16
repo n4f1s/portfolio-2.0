@@ -24,6 +24,21 @@ const TransitionLink = ({
 
     const handleLinkClick = contextSafe(
         async (e: React.MouseEvent<HTMLAnchorElement>) => {
+            onClick?.(e);
+
+            if (e.defaultPrevented) return;
+
+            const shouldUseDefaultNavigation =
+                e.button !== 0 ||
+                e.metaKey ||
+                e.ctrlKey ||
+                e.shiftKey ||
+                e.altKey ||
+                e.currentTarget.target === '_blank' ||
+                e.currentTarget.hasAttribute('download');
+
+            if (shouldUseDefaultNavigation) return;
+
             e.preventDefault();
 
             gsap.set('.page-transition', { yPercent: 100 });
@@ -37,12 +52,10 @@ const TransitionLink = ({
             });
 
             tl.then(() => {
-                if (back) {
+                if (back && !href) {
                     router.back();
                 } else if (href) {
                     router.push(href.toString());
-                } else if (onClick) {
-                    onClick(e);
                 }
             });
         },
