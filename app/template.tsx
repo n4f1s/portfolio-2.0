@@ -7,30 +7,38 @@ gsap.registerPlugin(useGSAP);
 
 export default function Template({ children }: { children: React.ReactNode }) {
     useGSAP(() => {
+        const shouldAnimate =
+            typeof window !== 'undefined' &&
+            window.sessionStorage.getItem('page-transition') === 'pending';
+
+        gsap.set('.page-transition', { yPercent: shouldAnimate ? 0 : 100 });
+        gsap.set('.page-transition--inner', { yPercent: 100 });
+
+        if (!shouldAnimate) return;
+
+        window.sessionStorage.removeItem('page-transition');
+
         const tl = gsap.timeline();
 
-        // Animate the colored panel from bottom to top, then hide the background
         tl.fromTo(
             '.page-transition--inner',
-            { yPercent: 100 }, // start fully below viewport
+            { yPercent: 100 },
             { yPercent: 0, duration: 0.2 }
         )
             .to('.page-transition--inner', {
-                yPercent: -100, // move fully above viewport
+                yPercent: -100,
                 duration: 0.2,
             })
             .to('.page-transition', {
-                yPercent: -100, // move background above viewport
+                yPercent: -100,
                 duration: 0.2,
             });
     });
 
     return (
         <div>
-            {/* Background container */}
-            <div className="page-transition w-screen h-screen fixed top-0 left-0 bg-background-light z-[5]">
-                {/* Primary color panel */}
-                <div className="page-transition--inner w-screen h-screen fixed top-0 left-0 bg-primary z-[5]" />
+            <div className="page-transition fixed left-0 top-0 z-[5] h-screen w-screen translate-y-full bg-background-light">
+                <div className="page-transition--inner fixed left-0 top-0 z-[5] h-screen w-screen translate-y-full bg-primary" />
             </div>
 
             {children}

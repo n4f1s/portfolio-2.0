@@ -19,14 +19,14 @@ const Preloader = () => {
             tl.to('.name-text span', {
                 y: 0,
                 stagger: 0.05,
-                duration: 0.2,
+                duration: 0.16,
             });
 
             tl.to('.preloader-item', {
-                delay: 1,
+                delay: 0.35,
                 y: '100%',
-                duration: 0.5,
-                stagger: 0.1,
+                duration: 0.35,
+                stagger: 0.05,
             })
                 .to('.name-text span', { autoAlpha: 0 }, '<0.5')
                 .to(

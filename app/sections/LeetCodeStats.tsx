@@ -4,12 +4,14 @@ import SectionTitle from '@/components/SectionTitle';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const LeetCodeStats = () => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [shouldLoadCard, setShouldLoadCard] = useState(false);
 
     useEffect(() => {
         const rafId = window.requestAnimationFrame(() => {
@@ -18,6 +20,27 @@ const LeetCodeStats = () => {
 
         return () => window.cancelAnimationFrame(rafId);
     }, []);
+
+    useEffect(() => {
+        const container = containerRef.current;
+
+        if (!container || shouldLoadCard) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (!entry.isIntersecting) return;
+                setShouldLoadCard(true);
+                observer.disconnect();
+            },
+            {
+                rootMargin: '300px 0px',
+            },
+        );
+
+        observer.observe(container);
+
+        return () => observer.disconnect();
+    }, [shouldLoadCard]);
 
     useGSAP(
         () => {
@@ -48,12 +71,23 @@ const LeetCodeStats = () => {
                         rel="noopener noreferrer"
                         className="cursor-target"
                     >
-                        <img
-                            src="https://leetcard.jacoblin.cool/n4f1s?theme=chartreuse&ext=heatmap"
-                            alt="LeetCode Stats"
-                            width="500"
-                            onLoad={() => ScrollTrigger.refresh()}
-                        />
+                        {shouldLoadCard ? (
+                            <Image
+                                src="https://leetcard.jacoblin.cool/n4f1s?theme=chartreuse&ext=heatmap"
+                                alt="LeetCode Stats"
+                                width={500}
+                                height={248}
+                                unoptimized
+                                sizes="(max-width: 768px) 100vw, 500px"
+                                className="h-auto max-w-full"
+                                onLoad={() => ScrollTrigger.refresh()}
+                            />
+                        ) : (
+                            <div
+                                aria-hidden="true"
+                                className="w-full max-w-[500px] aspect-[500/248] rounded-md bg-background-light"
+                            />
+                        )}
                     </a>
                 </div>
 

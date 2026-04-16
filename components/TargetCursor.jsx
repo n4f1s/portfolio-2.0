@@ -11,6 +11,8 @@ const TargetCursor = ({
     const cursorRef = useRef(null);
     const cornersRef = useRef(null);
     const spinTl = useRef(null);
+    const quickXRef = useRef(null);
+    const quickYRef = useRef(null);
 
     const constants = useMemo(
         () => ({
@@ -23,12 +25,8 @@ const TargetCursor = ({
 
     const moveCursor = useCallback((x, y) => {
         if (!cursorRef.current) return;
-        gsap.to(cursorRef.current, {
-            x,
-            y,
-            duration: 0.1,
-            ease: 'power3.out',
-        });
+        quickXRef.current?.(x);
+        quickYRef.current?.(y);
     }, []);
 
     useEffect(() => {
@@ -66,6 +64,15 @@ const TargetCursor = ({
             y: window.innerHeight / 2,
         });
 
+        quickXRef.current = gsap.quickTo(cursor, 'x', {
+            duration: 0.1,
+            ease: 'power3.out',
+        });
+        quickYRef.current = gsap.quickTo(cursor, 'y', {
+            duration: 0.1,
+            ease: 'power3.out',
+        });
+
         const createSpinTimeline = () => {
             if (spinTl.current) {
                 spinTl.current.kill();
@@ -80,7 +87,7 @@ const TargetCursor = ({
         createSpinTimeline();
 
         const moveHandler = e => moveCursor(e.clientX, e.clientY);
-        window.addEventListener('mousemove', moveHandler);
+        window.addEventListener('pointermove', moveHandler, { passive: true });
 
         const scrollHandler = () => {
             if (!activeTarget || !cursorRef.current) return;
@@ -291,7 +298,7 @@ const TargetCursor = ({
         window.addEventListener('mouseover', enterHandler, { passive: true });
 
         return () => {
-            window.removeEventListener('mousemove', moveHandler);
+            window.removeEventListener('pointermove', moveHandler);
             window.removeEventListener('mouseover', enterHandler);
             window.removeEventListener('scroll', scrollHandler);
 

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Anton, Roboto_Flex } from 'next/font/google';
-import { ReactLenis } from 'lenis/react';
 
 import 'lenis/dist/lenis.css';
 import './globals.css';
@@ -8,6 +7,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ClientComponents from './sections/ClientComponents';
 import Preloader from '@/components/Preloader';
+import SmoothScrollBootstrap from '@/components/SmoothScrollBootstrap';
 
 
 
@@ -64,20 +64,13 @@ export default function RootLayout({
                 suppressHydrationWarning
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
             >
-                <ReactLenis
-                    root
-                    options={{
-                        lerp: 0.1,
-                        duration: 1.4,
-                    }}
-                >
-                    <Navbar />
-                    <main>{children}</main>
-                    <Footer />
+                <SmoothScrollBootstrap />
+                <Navbar />
+                <main>{children}</main>
+                <Footer />
 
-                    <Preloader />
-                    <ClientComponents />
-                </ReactLenis>
+                <Preloader />
+                <ClientComponents />
             </body>
         </html>
     );

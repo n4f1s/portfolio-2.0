@@ -7,9 +7,11 @@ import { useGSAP } from '@gsap/react';
 export default function RainStreaks() {
     const containerRef = useRef<HTMLDivElement>(null);
     const dropsRef = useRef<HTMLDivElement[]>([]);
-    const [dropCount, setDropCount] = useState(100);
+    const [dropCount, setDropCount] = useState(0);
 
     const animateDrops = useCallback(() => {
+        if (!dropsRef.current.length) return;
+
         const containerWidth = containerRef.current?.offsetWidth || window.innerWidth;
         const containerHeight = containerRef.current?.offsetHeight || window.innerHeight;
         const isMobile = window.innerWidth < 768;
@@ -36,23 +38,49 @@ export default function RainStreaks() {
         });
     }, []);
 
-    useGSAP(() => animateDrops(), [dropCount]);
+    useGSAP(() => {
+        if (!dropCount) return;
+        animateDrops();
+    }, [dropCount]);
 
     useEffect(() => {
-        setDropCount(window.innerWidth < 768 ? 10 : 40);
+        const getDropCount = () => {
+            const prefersReducedMotion = window.matchMedia(
+                '(prefers-reduced-motion: reduce)',
+            ).matches;
+
+            if (prefersReducedMotion) {
+                return 0;
+            }
+
+            const hasLimitedCpu =
+                typeof navigator.hardwareConcurrency === 'number' &&
+                navigator.hardwareConcurrency <= 4;
+
+            if (window.innerWidth < 768) {
+                return hasLimitedCpu ? 4 : 6;
+            }
+
+            return hasLimitedCpu ? 16 : 24;
+        };
+
+        setDropCount(getDropCount());
 
         let timeout: NodeJS.Timeout;
         const handleResize = () => {
             clearTimeout(timeout);
             timeout = setTimeout(() => {
-                setDropCount(window.innerWidth < 768 ? 10 : 40);
+                setDropCount(getDropCount());
                 gsap.killTweensOf(dropsRef.current);
                 animateDrops();
             }, 200);
         };
 
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        return () => {
+            clearTimeout(timeout);
+            window.removeEventListener('resize', handleResize);
+        };
     }, [animateDrops]);
 
     return (

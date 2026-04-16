@@ -41,6 +41,7 @@ const TransitionLink = ({
 
             e.preventDefault();
 
+            window.sessionStorage.setItem('page-transition', 'pending');
             gsap.set('.page-transition', { yPercent: 100 });
             gsap.set('.page-transition--inner', { yPercent: 100 });
 

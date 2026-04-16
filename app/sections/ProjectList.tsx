@@ -6,16 +6,16 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import React, { useRef, useState, MouseEvent } from 'react';
+import React, { useRef, useState } from 'react';
 import Project from './Project';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const ProjectList = () => {
     const containerRef = useRef<HTMLDivElement>(null);
-    const projectListRef = useRef<HTMLDivElement>(null);
     const imageContainer = useRef<HTMLDivElement>(null);
-    const imageRef = useRef<HTMLImageElement>(null);
+    const containerRectRef = useRef<DOMRect | null>(null);
+    const imageHeightRef = useRef(0);
     const [selectedProject, setSelectedProject] = useState<string | null>(
         PROJECTS[0].slug,
     );
@@ -24,54 +24,95 @@ const ProjectList = () => {
     // also update image position
     useGSAP(
         (context, contextSafe) => {
-            // show image on hover
+            const container = containerRef.current;
+            const previewImage = imageContainer.current;
+
+            if (!container || !previewImage || !contextSafe) return;
+
             if (window.innerWidth < 768) {
                 setSelectedProject(null);
                 return;
             }
 
-            const handleMouseMove = contextSafe?.((e: MouseEvent) => {
-                if (!containerRef.current) return;
-                if (!imageContainer.current) return;
+            const yTo = gsap.quickTo(previewImage, 'y', {
+                duration: 0.35,
+                ease: 'power3.out',
+            });
+            const opacityTo = gsap.quickTo(previewImage, 'opacity', {
+                duration: 0.2,
+                ease: 'power2.out',
+            });
 
+            const updateMeasurements = () => {
+                containerRectRef.current = container.getBoundingClientRect();
+                imageHeightRef.current = previewImage.offsetHeight;
+            };
+
+            updateMeasurements();
+
+            let rafId = 0;
+
+            const handlePointerMove = contextSafe((e: PointerEvent) => {
                 if (window.innerWidth < 768) {
                     setSelectedProject(null);
                     return;
                 }
 
-                const containerRect =
-                    containerRef.current?.getBoundingClientRect();
-                const imageRect =
-                    imageContainer.current.getBoundingClientRect();
-                const offsetTop = e.clientY - containerRect.y;
-
-                // if cursor is outside the container, hide the image
-                if (
-                    containerRect.y > e.clientY ||
-                    containerRect.bottom < e.clientY ||
-                    containerRect.x > e.clientX ||
-                    containerRect.right < e.clientX
-                ) {
-                    return gsap.to(imageContainer.current, {
-                        duration: 0.3,
-                        opacity: 0,
-                    });
+                if (rafId) {
+                    window.cancelAnimationFrame(rafId);
                 }
 
-                gsap.to(imageContainer.current, {
-                    y: offsetTop - imageRect.height / 2,
-                    duration: 1,
-                    opacity: 1,
-                });
-            }) as any;
+                rafId = window.requestAnimationFrame(() => {
+                    const containerRect = containerRectRef.current;
+                    if (!containerRect) return;
 
-            window.addEventListener('mousemove', handleMouseMove);
+                    const offsetTop = e.clientY - containerRect.top;
+                    yTo(offsetTop - imageHeightRef.current / 2);
+                    opacityTo(1);
+                });
+            });
+
+            const handlePointerLeave = contextSafe(() => {
+                opacityTo(0);
+            });
+
+            const handleResize = () => {
+                updateMeasurements();
+            };
+
+            container.addEventListener('pointermove', handlePointerMove as EventListener, {
+                passive: true,
+            });
+            container.addEventListener(
+                'pointerenter',
+                handleResize as EventListener,
+            );
+            container.addEventListener(
+                'pointerleave',
+                handlePointerLeave as EventListener,
+            );
+            window.addEventListener('resize', handleResize, { passive: true });
 
             return () => {
-                window.removeEventListener('mousemove', handleMouseMove);
+                if (rafId) {
+                    window.cancelAnimationFrame(rafId);
+                }
+                container.removeEventListener(
+                    'pointermove',
+                    handlePointerMove as EventListener,
+                );
+                container.removeEventListener(
+                    'pointerenter',
+                    handleResize as EventListener,
+                );
+                container.removeEventListener(
+                    'pointerleave',
+                    handlePointerLeave as EventListener,
+                );
+                window.removeEventListener('resize', handleResize);
             };
         },
-        { scope: containerRef, dependencies: [containerRef.current] },
+        { scope: containerRef },
     );
 
     useGSAP(
@@ -118,8 +159,8 @@ const ProjectList = () => {
                                 <Image
                                     src={project.thumbnail}
                                     alt="Project"
-                                    width="400"
-                                    height="500"
+                                    width={400}
+                                    height={500}
                                     className={cn(
                                         'absolute inset-0 transition-all duration-500 w-full h-full object-cover',
                                         {
@@ -128,17 +169,13 @@ const ProjectList = () => {
                                                 selectedProject,
                                         },
                                     )}
-                                    ref={imageRef}
                                     key={project.slug}
                                 />
                             ))}
                         </div>
                     )}
 
-                    <div
-                        className="flex flex-col max-md:gap-10"
-                        ref={projectListRef}
-                    >
+                    <div className="flex flex-col max-md:gap-10">
                         {PROJECTS.map((project, index) => (
                             <Project
                                 index={index}

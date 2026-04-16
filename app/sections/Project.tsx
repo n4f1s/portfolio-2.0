@@ -97,8 +97,8 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                 <Image
                     src={project.thumbnail}
                     alt="Project"
-                    width="300"
-                    height="200"
+                    width={300}
+                    height={200}
                     className={cn(
                         'w-full object-cover mb-6 aspect-[3/2] object-top',
                     )}
@@ -118,8 +118,8 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                         <span className="text-foreground opacity-0 group-hover:opacity-100 transition-all">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="36"
-                                height="36"
+                                width={36}
+                                height={36}
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"

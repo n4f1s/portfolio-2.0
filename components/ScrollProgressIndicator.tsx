@@ -5,7 +5,11 @@ const ScrollProgressIndicator = () => {
     const scrollBarRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const handleScroll = () => {
+        let rafId = 0;
+
+        const updateProgress = () => {
+            rafId = 0;
+
             if (scrollBarRef.current) {
                 const { scrollHeight, clientHeight } = document.documentElement;
                 const scrollableHeight = scrollHeight - clientHeight;
@@ -27,14 +31,30 @@ const ScrollProgressIndicator = () => {
             }
         };
 
-        handleScroll();
+        const handleScroll = () => {
+            if (rafId) return;
+            rafId = window.requestAnimationFrame(updateProgress);
+        };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        updateProgress();
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', handleScroll, { passive: true });
+
+        return () => {
+            if (rafId) {
+                window.cancelAnimationFrame(rafId);
+            }
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleScroll);
+        };
     }, []);
 
     return (
-        <div className="fixed top-[50svh] right-[2%] -translate-y-1/2 w-1.5 h-[100px] rounded-full bg-background-light overflow-hidden">
+        <div
+            aria-hidden="true"
+            className="fixed top-[50svh] right-[2%] -translate-y-1/2 w-1.5 h-[100px] rounded-full bg-background-light overflow-hidden"
+        >
             <div
                 className="w-full bg-primary rounded-full h-full"
                 ref={scrollBarRef}
