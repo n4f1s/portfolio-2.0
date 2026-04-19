@@ -111,7 +111,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                     _{(index + 1).toString().padStart(2, '0')}.
                 </div>
                 <div className="">
-                    <h4 className="text-4xl xs:text-6xl flex gap-4 font-anton transition-all duration-1000 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
+                    <h3 className="text-4xl xs:text-6xl flex gap-4 font-anton transition-all duration-1000 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
                         <span className="cursor-target">
                             {project.title}
                         </span>
@@ -136,7 +136,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                                 <path id="arrow-curb" d="M15 3h6v6"></path>
                             </svg>
                         </span>
-                    </h4>
+                    </h3>
                     <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
                         {project.techStack
                             .slice(0, 3)

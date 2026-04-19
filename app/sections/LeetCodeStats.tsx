@@ -69,8 +69,10 @@ const LeetCodeStats = () => {
                         href="https://leetcode.com/n4f1s"
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Open Musfiqur Rahman's LeetCode profile in a new tab"
                         className="cursor-target"
                     >
+
                         {shouldLoadCard ? (
                             <Image
                                 src="https://leetcard.jacoblin.cool/n4f1s?theme=chartreuse&ext=heatmap"

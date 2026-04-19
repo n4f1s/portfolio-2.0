@@ -43,12 +43,17 @@ const Navbar = () => {
         <>
             <div className="sticky top-0 z-[4]">
                 <button
+                    type="button"
+                    aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                    aria-expanded={isMenuOpen}
+                    aria-controls="mobile-navigation"
                     className={cn(
                         'group size-12 absolute top-5 right-5 md:right-10 z-[2] cursor-target',
                     )}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <span
+                        aria-hidden="true"
                         className={cn(
                             'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px] ',
                             {
@@ -58,6 +63,7 @@ const Navbar = () => {
                         )}
                     ></span>
                     <span
+                        aria-hidden="true"
                         className={cn(
                             'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px] ',
                             {
@@ -67,6 +73,7 @@ const Navbar = () => {
                         )}
                     ></span>
                 </button>
+
             </div>
 
             <div
@@ -80,12 +87,14 @@ const Navbar = () => {
             ></div>
 
             <div
+                id="mobile-navigation"
                 className={cn(
                     'fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-700 z-[3] overflow-hidden gap-y-14',
                     'flex flex-col lg:justify-center py-10',
                     { 'translate-x-0': isMenuOpen },
                 )}
             >
+
                 <div
                     className={cn(
                         'fixed inset-0 scale-150 translate-x-1/2 rounded-[50%] bg-background-light duration-700 delay-150 z-[-1]',
