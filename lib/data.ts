@@ -17,7 +17,7 @@ export const SOCIAL_LINKS = [
     },
     { name: 'leetcode', url: 'https://leetcode.com/u/n4f1s/' },
     { name: 'facebook', url: 'https://www.facebook.com/Musfiq.Nafis/' },
-    { name: 'Portfolio Archive', url: GENERAL_INFO.oldPortfolio },
+    { name: 'Portfolio v1', url: GENERAL_INFO.oldPortfolio },
 ];
 
 export const hackerRankData = {
@@ -197,39 +197,6 @@ export const PROJECTS: IProject[] = [
       <li>Focused on component structure and performance so the experience stayed fast even in motion-heavy sections.</li>
     </ul>
   `,
-    },
-    {
-        title: 'Apple',
-        slug: 'apple',
-        techStack: [
-            'Next.js',
-            'GSAP',
-            'Three.js',
-            'Tailwind CSS',
-            'React Three Fiber',
-        ],
-        thumbnail: '/projects/thumbnail/apple.webp',
-        longThumbnail: '/projects/thumbnail/apple.webp',
-        images: [
-            '/projects/images/apple-1.png',
-            '/projects/images/apple-2.png',
-        ],
-        liveUrl: 'https://apple.musfiqur.com/',
-        year: 2023,
-        description: `
-        This project is a frontend engineering study inspired by Apple's product pages. I built it to explore how 3D rendering, animation sequencing, and responsive layouts can work together in a high-polish product experience without sacrificing performance.<br/><br/>
-
-        The implementation focused on reusable UI structure, smooth interaction, and keeping the rendering pipeline disciplined enough for real devices.
-    `,
-        role: `
-        <strong>Solo Developer</strong><br/><br/>
-        Built the experience end to end with an emphasis on reusable components and rendering discipline:
-        <ul>
-        <li>Built reusable UI components with <strong>Next.js</strong> and <strong>Tailwind CSS</strong>.</li>
-        <li>Integrated 3D product visuals with <strong>Three.js</strong> and <strong>React Three Fiber</strong>.</li>
-        <li>Implemented timeline and scroll-based motion with <strong>GSAP</strong> while keeping interactions smooth.</li>
-        </ul>
-    `,
     },
     {
         title: 'Fizzi',

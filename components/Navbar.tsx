@@ -137,7 +137,7 @@ const Navbar = () => {
                                                 router.push(link.url);
                                                 setIsMenuOpen(false);
                                             }}
-                                            className="group text-xl flex items-center gap-3"
+                                            className="group text-xl flex items-center gap-3 text-nowrap"
                                         >
                                             <span
                                                 className={cn(
