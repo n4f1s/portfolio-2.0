@@ -1,66 +1,51 @@
 'use client';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import { coverPage } from '@/components/PageTransition';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { ComponentProps } from 'react';
 
 interface Props extends ComponentProps<typeof Link> {
-    back?: boolean;
+    /** Title shown on the curtain while the next page loads. */
+    label?: string;
 }
 
-gsap.registerPlugin(useGSAP);
-
-const TransitionLink = ({
-    href,
-    onClick,
-    children,
-    back = false,
-    ...rest
-}: Props) => {
+const TransitionLink = ({ href, onClick, children, label, ...rest }: Props) => {
     const router = useRouter();
 
-    const { contextSafe } = useGSAP(() => {});
+    const handleLinkClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+        onClick?.(e);
 
-    const handleLinkClick = contextSafe(
-        async (e: React.MouseEvent<HTMLAnchorElement>) => {
-            onClick?.(e);
+        if (e.defaultPrevented || typeof href !== 'string') return;
 
-            if (e.defaultPrevented) return;
+        const shouldUseDefaultNavigation =
+            e.button !== 0 ||
+            e.metaKey ||
+            e.ctrlKey ||
+            e.shiftKey ||
+            e.altKey ||
+            e.currentTarget.target === '_blank' ||
+            e.currentTarget.hasAttribute('download');
 
-            const shouldUseDefaultNavigation =
-                e.button !== 0 ||
-                e.metaKey ||
-                e.ctrlKey ||
-                e.shiftKey ||
-                e.altKey ||
-                e.currentTarget.target === '_blank' ||
-                e.currentTarget.hasAttribute('download');
+        if (shouldUseDefaultNavigation) return;
 
-            if (shouldUseDefaultNavigation) return;
+        const url = new URL(href, window.location.href);
 
-            e.preventDefault();
+        // External links and same-page hash links keep Link's own behavior.
+        if (
+            url.origin !== window.location.origin ||
+            url.pathname === window.location.pathname
+        )
+            return;
 
-            window.sessionStorage.setItem('page-transition', 'pending');
-            gsap.set('.page-transition', { yPercent: 100 });
-            gsap.set('.page-transition--inner', { yPercent: 100 });
+        e.preventDefault();
 
-            const tl = gsap.timeline();
+        const covered = coverPage(label);
+        if (!covered) return;
 
-            tl.to('.page-transition', {
-                yPercent: 0,
-                duration: 0.3,
-            });
-
-            tl.then(() => {
-                if (back && !href) {
-                    router.back();
-                } else if (href) {
-                    router.push(href.toString());
-                }
-            });
-        },
-    );
+        router.prefetch(href);
+        await covered;
+        router.push(href);
+    };
 
     return (
         <Link href={href} {...rest} onClick={handleLinkClick}>

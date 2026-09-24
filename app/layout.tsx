@@ -6,6 +6,7 @@ import './globals.css';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ClientComponents from './sections/ClientComponents';
+import PageTransition from '@/components/PageTransition';
 import Preloader from '@/components/Preloader';
 import SmoothScrollBootstrap from '@/components/SmoothScrollBootstrap';
 
@@ -69,6 +70,7 @@ export default function RootLayout({
                 <main>{children}</main>
                 <Footer />
 
+                <PageTransition />
                 <Preloader />
                 <ClientComponents />
             </body>
